@@ -5,16 +5,16 @@ def swap(alist, index):
     The function takes a list and an index as inputs, and out outputs a list with two items swapped
     '''
     a = alist[index] # sets the variable and puts the indexth item of alist into it.
-    b = alist[index+1]
-    alist[index] = b
-    alist[index+1] = a
-    return (alist)
+    b = alist[index+1]  # sets the variable b and puts the (index+1)th item of alist into it.
+    alist[index] = b # takes number stored in b and puts it where a was.
+    alist[index+1] = a # takes number stored in a and put it where b was.
+    return (alist) # gives alist back to caller.
 
 def bsort(alist):
-    swaps = True
-    while swaps:
+    swaps = True # sets swaps to true
+    while swaps:# This is true - it is set true in line 20, and reset to true every time a swap occurs.  When the for loop that starts in line 23 goes through it will only stop looping when no swaps occur, ie when the sort is done.
         swaps = False
-        for i in range(len(alist)-1):
+        for i in range(len(alist)-1):  #iterate through the list using the index (i)
             if (alist[i] > alist[i+1]):
                 alist = swap(alist, i)
                 swaps = True
